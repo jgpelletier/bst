@@ -1,7 +1,12 @@
 typedef struct np_pool_s np_pool_t;
+typedef struct bst_node_s node_t;
+
+struct bst_node_s {
+    int *data; // does void allow the data value to be multiple types?
+    struct bst_node_s* right, *left;//, *parent;
+};
 
 struct np_pool_s {
-    // ^ VEBOTEN!
     char *unused;
     char *stop;
     size_t node_size;
