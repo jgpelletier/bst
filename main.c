@@ -16,7 +16,7 @@ int main ()
     for ( i = 0; i < 15; ++i) {
         (node_t*) new_node(&arr[i], np_allocate(&node_pool));
 
-        if (head == NULL) {
+        if (i == 0) { // <- head == NULL is skipped
             head = &nodes[i];
         } else {
             node = head;
