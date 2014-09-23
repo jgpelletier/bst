@@ -4,10 +4,10 @@
 
 void np_initialize(np_pool_t *node_pool, size_t node_size, void *memory, size_t memory_size)
 {
+    node_pool -> node_size = node_size;
     node_pool -> unused = memory;
     node_pool -> stop = node_pool -> unused + memory_size;
     node_pool -> free_node = NULL;
-    node_pool -> node_size = node_size;
 }
 
 void * np_allocate(np_pool_t* node_pool)
@@ -27,3 +27,8 @@ void * np_allocate(np_pool_t* node_pool)
     return NULL;
 }
 
+node_t * new_node (int *data, node_t *node)
+{
+    node->data = data;
+    return node;
+}
