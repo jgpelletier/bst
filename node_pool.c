@@ -24,11 +24,11 @@ void * np_allocate(np_pool_t* node_pool)
         return node;
     }
 
-    return NULL;
+    return NULL; // returns with null when i = 14
 }
 
 node_t * new_node (int *data, node_t *node)
 {
-    node->data = data;
+    node->data = data; // seg fault
     return node;
 }
