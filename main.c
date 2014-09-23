@@ -5,13 +5,15 @@
 
 int main ()
 {
-    node_t nodes[15];
+    static node_t nodes[15];
 
     np_pool_t node_pool;
+    //node_t node;
 
     np_initialize(&node_pool, sizeof(node_t), nodes, sizeof(nodes));
 
-    np_allocate(&node_pool);
+    (node_t*) np_allocate(&node_pool);
+
 
     return 0;
 }
