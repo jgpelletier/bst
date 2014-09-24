@@ -12,6 +12,7 @@ int main ()
     np_pool_t node_pool;
     np_initialize(&node_pool, sizeof(node_t), nodes, sizeof(nodes));
     static int arr[15] = { 9, 4, 8, 7, 0, 10, 5, 14, 1, 11, 24, 19, 18, 34, 17 };
+    head = NULL;
 
     for ( i = 0; i < 15; ++i) {
         (node_t*) new_node(&arr[i], np_allocate(&node_pool));
