@@ -27,10 +27,3 @@ void * np_allocate(np_pool_t* node_pool)
 
     return NULL;
 }
-
-// how come vvv this does not work in bst.h
-node_t * new_node (int *data, node_t *node)
-{
-    node->data = data;
-    return node;
-}

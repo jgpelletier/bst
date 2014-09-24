@@ -7,4 +7,4 @@ struct bst_node_s {
 };
 
 
-//node_t* new_node(int *data, node_t *);
+node_t* new_node(int *data, node_t *);
