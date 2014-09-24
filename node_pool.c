@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "node_pool.h"
+#include "bst.h"
 
 void np_initialize(np_pool_t *node_pool, size_t node_size, void *memory, size_t memory_size)
 {
@@ -24,11 +25,12 @@ void * np_allocate(np_pool_t* node_pool)
         return node;
     }
 
-    return NULL; // returns with null when i = 14
+    return NULL;
 }
 
+// how come vvv this does not work in bst.h
 node_t * new_node (int *data, node_t *node)
 {
-    node->data = data; // seg fault
+    node->data = data;
     return node;
 }
