@@ -17,7 +17,5 @@ int main ()
         head = add(head, &arr[i], np_allocate(&node_pool));
     }
 
-
-
     return 0;
 }
