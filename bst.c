@@ -34,3 +34,11 @@ node_t * add (node_t * head, int * value, node_t * node)
         return append(head, node);
     }
 }
+
+void print_tree(node_t * node)
+{
+    if (node == NULL) return;
+    if(node->left) print_tree(node->left);
+    printf("%d\n", *node->data);
+    if (node->right) print_tree(node->right);
+}

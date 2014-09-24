@@ -8,3 +8,4 @@ struct bst_node_s {
 
 
 node_t * add (node_t * head, int * value, node_t * node);
+void print_tree(node_t * node);
