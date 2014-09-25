@@ -11,6 +11,10 @@ int max (head_t * head) {
    return max_value(head->right);
 }
 
+int depth (head_t * head) {
+   return max_depth(head->right);
+}
+
 void print(head_t *head) {
     print_tree(head->right);
 }
@@ -33,6 +37,7 @@ int main ()
 
     printf("The min value is %d\n", min(&head));
     printf("The max value is %d\n", max(&head));
+    printf("The max depth is %d\n", depth(&head));
 
     return 0;
 }

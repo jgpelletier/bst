@@ -72,9 +72,19 @@ int max_value(node_t* node)
     return *temp->data;
 }
 
-/*
 int max_depth(node_t* node)
 {
+    int left_depth;
+    int right_depth;
+
+    if (node==NULL) {
+        return(0);
+    } else {
+        left_depth = max_depth(node->left);
+        right_depth = max_depth(node->right);
+    }
+
+    if (left_depth > right_depth) return(left_depth+1);
+    else return(right_depth+1);
 
 }
-*/
