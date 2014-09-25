@@ -14,7 +14,7 @@ int main ()
     head = NULL;
 
     for ( i = 0; i < 15; ++i) {
-        head = add(head, &arr[i], np_allocate(&node_pool));
+        /*head =*/ add(head, &arr[i], np_allocate(&node_pool));
     }
     // the tree is made but I lost the head.
     print_tree(head);
