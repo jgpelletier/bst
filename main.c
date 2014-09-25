@@ -3,6 +3,10 @@
 #include "node_pool.h"
 #include "bst.h"
 
+void print(head_t *head) {
+    print_tree(head->right);
+}
+
 int main ()
 {
     static node_t nodes[16]; // 2219 seg fault with 15 nodes. added another node to make it 16.
@@ -17,7 +21,7 @@ int main ()
          add(&head, &arr[i], np_allocate(&node_pool));
     }
 
-    //print_tree(head);
+    print(&head);
 
     return 0;
 }

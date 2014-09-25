@@ -15,7 +15,7 @@ node_t * append(node_t * head, node_t * node)
     int *a = head->data;
     int *b = node->data;
 
-    if (*a > *b) { //<-error
+    if (*a > *b) {
         if (head->left == NULL) {
             return head->left = node;
         } else  {
@@ -33,11 +33,11 @@ node_t * append(node_t * head, node_t * node)
 head_t * add (head_t * head, int * value, node_t * node)
 {
     node->data = value;
-    // vvv error
-    if (&head->right->data ==  NULL) { // <-skips this
+
+    if (&head->right->data ==  NULL) {
         head->right = node;
     } else {
-        append(head->right, node); //<-error
+        append(head->right, node);
     }
     return head;
 }
