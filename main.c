@@ -3,6 +3,14 @@
 #include "node_pool.h"
 #include "bst.h"
 
+int min (head_t * head) {
+   return min_value(head->right);
+}
+
+int max (head_t * head) {
+   return max_value(head->right);
+}
+
 void print(head_t *head) {
     print_tree(head->right);
 }
@@ -22,6 +30,9 @@ int main ()
     }
 
     print(&head);
+
+    printf("The min value is %d\n", min(&head));
+    printf("The max value is %d\n", max(&head));
 
     return 0;
 }

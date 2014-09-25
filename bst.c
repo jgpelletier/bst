@@ -49,3 +49,32 @@ void print_tree(node_t * node)
     printf("%d\n", *node->data);
     if (node->right) print_tree(node->right);
 }
+
+int min_value(node_t* node)
+{
+    node_t * temp = node;
+
+    while (temp->left != NULL) {
+        temp = temp->left;
+    }
+
+    return *temp->data;
+}
+
+int max_value(node_t* node)
+{
+    node_t * temp = node;
+
+    while (temp->right != NULL) {
+        temp = temp->right;
+    }
+
+    return *temp->data;
+}
+
+/*
+int max_depth(node_t* node)
+{
+
+}
+*/
