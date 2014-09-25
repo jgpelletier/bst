@@ -3,36 +3,43 @@
 #include "bst.h"
 #include "node_pool.h"
 
-/*node_t */ void  append(node_t * head, node_t * node)
+
+head_t * initialize_head(head_t * head)
+{
+    head->right = NULL;
+    return head;
+}
+
+node_t * append(node_t * head, node_t * node)
 {
     int *a = head->data;
     int *b = node->data;
 
-    if (*a > *b) {
+    if (*a > *b) { //<-error
         if (head->left == NULL) {
-            /*return*/ head->left = node;
+            return head->left = node;
         } else  {
-            /*return*/ append(head->left, node);
+            return append(head->left, node);
         }
     } else {
          if (head->right == NULL) {
-            /*return*/ head->right = node;
+            return head->right = node;
         } else  {
-            /*return*/ append(head->right, node);
+            return append(head->right, node);
         }
     }
 }
 
-/*node_t */ void  add (node_t * head, int * value, node_t * node)
+head_t * add (head_t * head, int * value, node_t * node)
 {
     node->data = value;
-
-    if (head ==  NULL) {
-        head = &node;
-        /*return head;*/
+    // vvv error
+    if (&head->right->data ==  NULL) { // <-skips this
+        head->right = node;
     } else {
-        /*return*/ append(head, node);
+        append(head->right, node); //<-error
     }
+    return head;
 }
 
 void print_tree(node_t * node)
@@ -40,4 +47,5 @@ void print_tree(node_t * node)
     if (node == NULL) return;
     if(node->left) print_tree(node->left);
     printf("%d\n", *node->data);
-    if (node->right) print_tree(node->right);}
+    if (node->right) print_tree(node->right);
+}
