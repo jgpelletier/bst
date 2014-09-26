@@ -88,3 +88,7 @@ int max_depth(node_t* node)
     else return(right_depth+1);
 
 }
+
+//find
+//insertion
+//deletion
