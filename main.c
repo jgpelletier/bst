@@ -19,6 +19,10 @@ void tree_search(head_t *head, int num) {
     find(head->right, num);
 }
 
+void deletion(head_t *head, int num) {
+    delete_node(head->right, num);
+}
+
 void print(head_t *head) {
     print_tree(head->right);
 }
@@ -45,6 +49,7 @@ int main ()
 
     tree_search(&head, 13);
     tree_search(&head, 17);
+    deletion(&head, 13);
 
     return 0;
 }

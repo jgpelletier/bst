@@ -18,6 +18,7 @@ int min_value(node_t* node);
 int max_value(node_t* node);
 int max_depth(node_t* node);
 void find (node_t * node, int num);
+void delete_node (node_t * node, int num);
 // find
 // insertion
 // deletion

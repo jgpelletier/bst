@@ -89,7 +89,8 @@ int max_depth(node_t* node)
 
 }
 
-void find (node_t * node, int num) {
+void find (node_t * node, int num)
+{
 
     while (node && *node->data != num) {
         if (*node->data > num) node = node->left;
@@ -103,3 +104,24 @@ void find (node_t * node, int num) {
 
 //insertion
 //deletion
+void delete_node (node_t * node, int num)
+{
+    node_t *head, *prev;
+    head = node;
+
+    while (node && *node->data != num) {
+        prev = node;
+        if (*node->data >  num) node = node->left;
+        else node = node->right;
+    }
+
+    if (*node->data != num) {
+         printf("%d not found. Process exited\n", num);
+         return;
+    }
+/*
+    if (node->left) {
+    }
+*/
+}
+//transplant
