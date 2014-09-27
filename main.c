@@ -15,6 +15,10 @@ int depth (head_t * head) {
    return max_depth(head->right);
 }
 
+void tree_search(head_t *head, int num) {
+    find(head->right, num);
+}
+
 void print(head_t *head) {
     print_tree(head->right);
 }
@@ -38,6 +42,9 @@ int main ()
     printf("The min value is %d\n", min(&head));
     printf("The max value is %d\n", max(&head));
     printf("The max depth is %d\n", depth(&head));
+
+    tree_search(&head, 14);
+    tree_search(&head, 17);
 
     return 0;
 }
