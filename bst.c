@@ -91,12 +91,12 @@ int max_depth(node_t* node)
 
 void find (node_t * node, int num) {
 
-    while (*node->data != num) {
+    while (node && *node->data != num) {
         if (*node->data > num) node = node->left;
         else node = node->right;
     }
 
-    if (*node->data == num) printf("%d found\n", num);
+    if (node && *node->data == num) printf("%d found\n", num);
     else printf("%d not found\n", num);
 
 }

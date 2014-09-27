@@ -43,7 +43,7 @@ int main ()
     printf("The max value is %d\n", max(&head));
     printf("The max depth is %d\n", depth(&head));
 
-    tree_search(&head, 14);
+    tree_search(&head, 13);
     tree_search(&head, 17);
 
     return 0;
