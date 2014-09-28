@@ -115,7 +115,7 @@ void delete_node (node_t * node, int num)
         else node = node->right;
     }
 
-    if (*node->data != num) {
+    if (node == NULL || *node->data != num) {
          printf("%d not found. Process exited\n", num);
          return;
     }
