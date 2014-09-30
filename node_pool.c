@@ -27,3 +27,6 @@ void * np_allocate(np_pool_t* node_pool)
 
     return NULL;
 }
+
+
+//void * np_free

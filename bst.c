@@ -102,8 +102,6 @@ void find (node_t * node, int num)
 
 }
 
-//insertion
-//deletion
 void delete_node (node_t * node, int num)
 {
     node_t *head, *prev;
