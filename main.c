@@ -52,6 +52,8 @@ int main ()
     deletion(&head, 13);
     deletion(&head, 11);
     print(&head);
+    deletion(&head, 34);
+    print(&head);
 
 
     return 0;

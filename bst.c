@@ -135,6 +135,8 @@ void delete_node (node_t * node, int num)
     if (node->left == NULL) {
         transplant (head, prev, node, node->right);
     }
+    else if (node->right == NULL) {
+        transplant (head, prev, node, node->left);
+    }
 
 }
-//transplant
