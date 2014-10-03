@@ -102,6 +102,20 @@ void find (node_t * node, int num)
 
 }
 
+node_t * transplant(node_t * head, node_t * prev, node_t * node, node_t * next_node)
+{
+    if (prev == NULL) {
+        head = next_node;
+    }
+    else if (prev->left ==  node) {
+        prev->left = next_node;
+    } else {
+        prev->right = next_node;
+    }
+
+    return head;
+}
+
 void delete_node (node_t * node, int num)
 {
     node_t *head, *prev;
@@ -117,9 +131,10 @@ void delete_node (node_t * node, int num)
          printf("%d not found. Process exited\n", num);
          return;
     }
-/*
-    if (node->left) {
+
+    if (node->left == NULL) {
+        transplant (head, prev, node, node->right);
     }
-*/
+
 }
 //transplant

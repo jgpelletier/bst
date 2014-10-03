@@ -50,6 +50,9 @@ int main ()
     tree_search(&head, 13);
     tree_search(&head, 17);
     deletion(&head, 13);
+    deletion(&head, 11);
+    print(&head);
+
 
     return 0;
 }
