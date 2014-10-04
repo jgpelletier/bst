@@ -4,13 +4,13 @@
 #include "node_pool.h"
 
 
-head_t * initialize_head(head_t * head)
+head_t *initialize_head(head_t *head)
 {
     head->right = NULL;
     return head;
 }
 
-node_t * append(node_t * head, node_t * node)
+node_t *append(node_t *head, node_t *node)
 {
     int *a = head->data;
     int *b = node->data;
@@ -30,7 +30,7 @@ node_t * append(node_t * head, node_t * node)
     }
 }
 
-head_t * add (head_t * head, int * value, node_t * node)
+head_t *add(head_t *head, int *value, node_t *node)
 {
     node->data = value;
 
@@ -42,7 +42,7 @@ head_t * add (head_t * head, int * value, node_t * node)
     return head;
 }
 
-void print_tree(node_t * node)
+void print_tree(node_t *node)
 {
     if (node == NULL) return;
     if(node->left) print_tree(node->left);
@@ -50,9 +50,9 @@ void print_tree(node_t * node)
     if (node->right) print_tree(node->right);
 }
 
-int min_value(node_t* node)
+int min_value(node_t *node)
 {
-    node_t * temp = node;
+    node_t *temp = node;
 
     while (temp->left != NULL) {
         temp = temp->left;
@@ -61,9 +61,9 @@ int min_value(node_t* node)
     return *temp->data;
 }
 
-int max_value(node_t* node)
+int max_value(node_t *node)
 {
-    node_t * temp = node;
+    node_t *temp = node;
 
     while (temp->right != NULL) {
         temp = temp->right;
@@ -72,7 +72,7 @@ int max_value(node_t* node)
     return *temp->data;
 }
 
-int max_depth(node_t* node)
+int max_depth(node_t *node)
 {
     int left_depth;
     int right_depth;
@@ -89,7 +89,7 @@ int max_depth(node_t* node)
 
 }
 
-void find (node_t * node, int num)
+void find(node_t *node, int num)
 {
 
     while (node && *node->data != num) {
@@ -102,7 +102,7 @@ void find (node_t * node, int num)
 
 }
 
-node_t * transplant(node_t * head, node_t * prev, node_t * node, node_t * next_node)
+node_t * transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
 {
     if (prev == NULL) {
         head = next_node;
@@ -116,7 +116,7 @@ node_t * transplant(node_t * head, node_t * prev, node_t * node, node_t * next_n
     return head;
 }
 
-void delete_node (node_t * node, int num)
+void delete_node(node_t *node, int num)
 {
     node_t *head, *prev;
     head = node;
