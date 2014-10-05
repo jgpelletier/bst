@@ -3,15 +3,15 @@
 #include "node_pool.h"
 #include "bst.h"
 
-int min (head_t * head) {
+int min (head_t *head) {
    return min_value(head->right);
 }
 
-int max (head_t * head) {
+int max (head_t *head) {
    return max_value(head->right);
 }
 
-int depth (head_t * head) {
+int depth (head_t *head) {
    return max_depth(head->right);
 }
 
