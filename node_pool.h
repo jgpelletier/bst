@@ -8,5 +8,5 @@ struct np_pool_s {
 };
 
 void np_initialize(np_pool_t *node_pool, size_t node_size, void *memory, size_t memory_size);
-void * np_allocate(np_pool_t* node_pool);
-void np_free(np_pool_t* node_pool, void * memory);
+void *np_allocate(np_pool_t *node_pool);
+void np_free(np_pool_t *node_pool, void *memory);
