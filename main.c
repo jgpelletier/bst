@@ -50,9 +50,13 @@ int main ()
     tree_search(&head, 13);
     tree_search(&head, 17);
     deletion(&head, 13);
+    printf("Deleting 11.\n");
     deletion(&head, 11);
+    printf("Printing tree in order.\n");
     print(&head);
+    printf("Deleting 34.\n");
     deletion(&head, 34);
+    printf("Printing tree in order.\n");
     print(&head);
 
 
