@@ -52,12 +52,13 @@ int main ()
     deletion(&head, 13);
     printf("Deleting 11.\n");
     deletion(&head, 11);
-    printf("Printing tree in order.\n");
+    printf("Printing tree n order.\n");
     print(&head);
     printf("Deleting 34.\n");
     deletion(&head, 34);
     printf("Printing tree in order.\n");
     print(&head);
+    np_free(&node_pool, nodes);
 
 
     return 0;
