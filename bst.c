@@ -102,7 +102,7 @@ void find(node_t *node, int num)
 
 }
 
-node_t * transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
+node_t *transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
 {
     if (prev == NULL) {
         head = next_node;
@@ -116,9 +116,20 @@ node_t * transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
     return head;
 }
 
+node_t *min(node_t *node)
+{
+    node_t *temp = node;
+
+    while (temp->left != NULL) {
+        temp = temp->left;
+    }
+
+    return *temp;
+}
+
 void delete_node(node_t *node, int num)
 {
-    node_t *head, *prev;
+    node_t *head, *prev, *min;
     head = node;
 
     while (node && *node->data != num) {
@@ -137,6 +148,13 @@ void delete_node(node_t *node, int num)
     }
     else if (node->right == NULL) {
         transplant (head, prev, node, node->left);
-    }
+    } else {
+        min = min(head);
+
+        if (node->right->data != min->data ) {
+            transplant (head, prev, node, min);
+        }
+
+        transplant (head, prev, node, min);
 
 }
