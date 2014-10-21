@@ -116,7 +116,7 @@ node_t *transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
     return head;
 }
 
-node_t *min(node_t *node)
+node_t *min_f (node_t *node)
 {
     node_t *temp = node;
 
@@ -124,7 +124,7 @@ node_t *min(node_t *node)
         temp = temp->left;
     }
 
-    return *temp;
+    return temp;
 }
 
 void delete_node(node_t *node, int num)
@@ -149,12 +149,13 @@ void delete_node(node_t *node, int num)
     else if (node->right == NULL) {
         transplant (head, prev, node, node->left);
     } else {
-        min = min(head);
+        min = min_f(head);
 
         if (node->right->data != min->data ) {
             transplant (head, prev, node, min);
         }
 
         transplant (head, prev, node, min);
+    }
 
 }
