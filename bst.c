@@ -159,3 +159,15 @@ void delete_node(node_t *node, int num)
     }
 
 }
+
+
+void insertion(node_t *node, int num)
+{
+    node_t *head, *prev;
+    head = prev = node;
+
+    while (node) {
+        prev = node;
+        if (node->data > num ) node = node->left;
+        else node = node->right;
+    }
