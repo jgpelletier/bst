@@ -160,14 +160,23 @@ void delete_node(node_t *node, int num)
 
 }
 
-
-void insertion(node_t *node, int num)
+node_t *insertion(node_t *node, int *value, node_t *temp)
 {
-    node_t *head, *prev;
+    node_t *prev;
     head = prev = node;
+    temp->data = value
 
     while (node) {
         prev = node;
-        if (node->data > num ) node = node->left;
+        if (node->data > temp->data ) node = node->left;
         else node = node->right;
     }
+
+    //if (prev == node) {
+    if (prev->data > temp->data) {
+        prev->left = temp;
+    } else {
+        prev->right = temp;
+    }
+    return head;
+}
