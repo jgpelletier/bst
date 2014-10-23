@@ -59,6 +59,8 @@ int main ()
     printf("Printing tree in order.\n");
     print(&head);
     deletion(&head, 14);
+    printf("Deleting 14.\n");
+    print(&head);
     np_free(&node_pool, nodes);
 
 
