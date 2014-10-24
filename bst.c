@@ -162,7 +162,7 @@ void delete_node(node_t *node, int num)
 
 node_t *insertion(node_t *node, int *value, node_t *temp)
 {
-    node_t *prev;
+    node_t *prev, *head;
     head = prev = node;
     temp->data = value
 

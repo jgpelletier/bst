@@ -27,6 +27,10 @@ void print(head_t *head) {
     print_tree(head->right);
 }
 
+head_t *insert(head_t *head, int num, node_t node) {
+    return insertion(head->right, num, node);
+}
+
 int main ()
 {
     static node_t nodes[16]; // 2219 seg fault with 15 nodes. added another node to make it 16.
@@ -62,6 +66,7 @@ int main ()
     printf("Deleting 14.\n");
     print(&head);
     np_free(&node_pool, nodes);
+    insert(&head, 13, np_allocate(&node_pool));
 
 
     return 0;
