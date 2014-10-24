@@ -41,7 +41,7 @@ int main ()
     initialize_head(&head);
     np_pool_t node_pool;
     np_initialize(&node_pool, sizeof(node_t), nodes, sizeof(nodes));
-    static int arr[15] = { 9, 4, 8, 7, 0, 10, 5, 14, 1, 11, 24, 19, 18, 34, 17 };
+    static int arr[15] = { 9, /*4,*/ 8, 7, 0, 10, 5, 14, 1, 11, 24, 19, 23, 18, 34, 17 };
 
     for ( i = 0; i < 15; ++i) {
          add(&head, &arr[i], np_allocate(&node_pool));
@@ -67,7 +67,12 @@ int main ()
     deletion(&head, 14);
     printf("Deleting 14.\n");
     print(&head);
+    //np_free(&node_pool, nodes); // <-- this causes a seg fault
+    deletion(&head, 19);
+    printf("Deleting 19.\n");
+    print(&head);
     np_free(&node_pool, nodes);
+
     //insert(&head, &arr[7], np_allocate(&node_pool)); // <- incompatible type for arg 3
     //printf("Inserting 14.\n");
     //print(&head);

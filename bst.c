@@ -115,8 +115,13 @@ node_t *transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
         prev->right = next_node;
         //next_node->left = node->left; //<-- a segfault occurs. This is the
         //min.
-        next_node->right= node->right;
+        //next_node->right= node->right;
+    }
 
+    if (node->right != NULL && node->left != NULL) {
+        if (node->right == next_node) {
+            next_node->right = node->right->right;
+        }
     }
 
     return head;
@@ -161,7 +166,7 @@ void delete_node(node_t *node, int num)
             transplant (head, prev, node, min);
         }
 
-        transplant (head, prev, node, min);
+        transplant (head, prev, node, min); // <- should this be node->right
     }
 
 }
