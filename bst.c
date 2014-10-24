@@ -160,11 +160,12 @@ void delete_node(node_t *node, int num)
 
 }
 
-node_t *insertion(node_t *node, int *value, node_t *temp)
+// vvv error: conflicting types for insertion
+node_t *insertion(node_t *node, int value, node_t *temp)
 {
     node_t *prev, *head;
     head = prev = node;
-    temp->data = value
+    temp->data = value;
 
     while (node) {
         prev = node;

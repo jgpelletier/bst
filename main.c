@@ -27,8 +27,10 @@ void print(head_t *head) {
     print_tree(head->right);
 }
 
-head_t *insert(head_t *head, int num, node_t node) {
-    return insertion(head->right, num, node);
+// note: expected node)T but arg is type void
+head_t *insert(head_t *head, int num, node_t *node) {
+    insertion(head->right, num, node); // incompatible type for argument 3 of insertion.
+    return head;
 }
 
 int main ()
@@ -66,7 +68,7 @@ int main ()
     printf("Deleting 14.\n");
     print(&head);
     np_free(&node_pool, nodes);
-    insert(&head, 13, np_allocate(&node_pool));
+    insert(&head, 13, np_allocate(&node_pool)); // <- incompatible type for arg 3
 
 
     return 0;
