@@ -28,7 +28,7 @@ void print(head_t *head) {
 }
 
 // note: expected node)T but arg is type void
-head_t *insert(head_t *head, int num, node_t *node) {
+head_t *insert(head_t *head, int *num, node_t *node) {
     insertion(head->right, num, node); // incompatible type for argument 3 of insertion.
     return head;
 }
@@ -47,29 +47,30 @@ int main ()
          add(&head, &arr[i], np_allocate(&node_pool));
     }
 
-    print(&head);
+    //print(&head);
 
-    printf("The min value is %d\n", min(&head));
-    printf("The max value is %d\n", max(&head));
-    printf("The max depth is %d\n", depth(&head));
+    //printf("The min value is %d\n", min(&head));
+    //printf("The max value is %d\n", max(&head));
+    //printf("The max depth is %d\n", depth(&head));
 
-    tree_search(&head, 13);
-    tree_search(&head, 17);
-    deletion(&head, 13);
-    printf("Deleting 11.\n");
-    deletion(&head, 11);
-    printf("Printing tree n order.\n");
-    print(&head);
-    printf("Deleting 34.\n");
-    deletion(&head, 34);
-    printf("Printing tree in order.\n");
-    print(&head);
+    //tree_search(&head, 13);
+    //tree_search(&head, 17);
+    //deletion(&head, 13);
+    //printf("Deleting 11.\n");
+    //deletion(&head, 11);
+    //printf("Printing tree n order.\n");
+    //print(&head);
+    //printf("Deleting 34.\n");
+    //deletion(&head, 34);
+    //printf("Printing tree in order.\n");
+    //print(&head);
     deletion(&head, 14);
     printf("Deleting 14.\n");
     print(&head);
     np_free(&node_pool, nodes);
-    insert(&head, 13, np_allocate(&node_pool)); // <- incompatible type for arg 3
-
+    //insert(&head, &arr[7], np_allocate(&node_pool)); // <- incompatible type for arg 3
+    //printf("Inserting 14.\n");
+    //print(&head);
 
     return 0;
 }
