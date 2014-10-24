@@ -19,3 +19,4 @@ int max_value(node_t *node);
 int max_depth(node_t *node);
 void find (node_t *node, int num);
 void delete_node (node_t *node, int num);
+node_t *insertion(node_t *node, int *value, node_t *temp); // <- pointer to an int?
