@@ -110,13 +110,8 @@ node_t *transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
     }
     else if (prev->left ==  node) {
         prev->left = next_node;
-        //next_node->left = node->left;
-        //next_node->right= node->right;
     } else {
         prev->right = next_node;
-        //next_node->left = node->left; //<-- a segfault occurs. This is the
-        //min.
-        //next_node->right= node->right;
     }
 
     if (node->right != NULL && node->left != NULL) {
@@ -165,7 +160,7 @@ void delete_node(node_t *node, int num)
     else if (node->right == NULL) {
         transplant (head, prev, node, node->left);
     } else {
-        min = min_f(node/*head*/); //<-- head is the wrong argument.
+        min = min_f(node);
 
         if (node->right->data != min->data ) {
             transplant (head, prev, node, min);
@@ -176,7 +171,6 @@ void delete_node(node_t *node, int num)
 
 }
 
-// vvv error: conflicting types for insertion
 node_t *insertion(node_t *node, int *value, node_t *temp)
 {
     node_t *prev, *head;
@@ -189,7 +183,6 @@ node_t *insertion(node_t *node, int *value, node_t *temp)
         else node = node->right;
     }
 
-    //if (prev == node) {
     if (prev->data > temp->data) {
         prev->left = temp;
     } else {
