@@ -118,7 +118,7 @@ node_t *transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
         if (node->right == next_node) {
             next_node->right = node->right->right;
         } else {
-            delete_node(node, next_node->data);
+            delete_node(node, *next_node->data);
             next_node->right = node->right;
             next_node->left = node->left;
         }
