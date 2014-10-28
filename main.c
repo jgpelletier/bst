@@ -66,6 +66,7 @@ int main ()
     deletion(&head, 14); // <- should this be arr[6];
     printf("Deleting 14.\n");
     print(&head);
+    print(&head); //<- is 17 not found a piece of old junk memory
     //np_free(&node_pool, nodes); // <-- this causes a seg fault
     deletion(&head, 19); //<-adds nodes
     printf("Deleting 19.\n");
