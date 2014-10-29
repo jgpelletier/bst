@@ -68,7 +68,7 @@ int main ()
     deletion(&head, 14); // <- should this be arr[6];
     //printf("Deleting 19.\n");
     print(&head);
-    np_free(&node_pool, nodes); // <-- the addition of this causes a seg fault
+    np_free(&node_pool, &nodes); // <-- the addition of this causes a seg fault
     printf("Deleting 19.\n");
     deletion(&head, 19); //<-adds nodes
     print(&head);
