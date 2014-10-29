@@ -164,9 +164,9 @@ void delete_node(node_t *node, int num)
 
         if (node->right->data != min->data ) {
             transplant (head, prev, node, min);
+        } else {
+            transplant (head, prev, node, min);
         }
-
-        transplant (head, prev, node, min); // <- should this be node->right
     }
 
 }

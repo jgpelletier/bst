@@ -63,15 +63,15 @@ int main ()
     //deletion(&head, 34);
     //printf("Printing tree in order.\n");
     //print(&head);
-    deletion(&head, 14); // <- should this be arr[6];
     printf("Deleting 14.\n");
+    deletion(&head, 14); // <- should this be arr[6];
+    //printf("Deleting 19.\n");
     print(&head);
-    print(&head); //<- is 17 not found a piece of old junk memory
     //np_free(&node_pool, nodes); // <-- this causes a seg fault
-    deletion(&head, 19); //<-adds nodes
     printf("Deleting 19.\n");
+    deletion(&head, 19); //<-adds nodes
     print(&head);
-    np_free(&node_pool, nodes);
+    //np_free(&node_pool, nodes);
 
     //insert(&head, &arr[7], np_allocate(&node_pool));
     //printf("Inserting 14.\n");
