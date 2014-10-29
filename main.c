@@ -40,6 +40,7 @@ int main ()
     initialize_head(&head);
     np_pool_t node_pool;
     np_initialize(&node_pool, sizeof(node_t), nodes, sizeof(nodes));
+    // ^^^ what is going on in here?
     static int arr[15] = { 9, /*4,*/ 8, 7, 0, 10, 5, 14, 1, 11, 24, 19, 23, 18, 34, 17 };
 
     for ( i = 0; i < 15; ++i) {
@@ -67,7 +68,7 @@ int main ()
     deletion(&head, 14); // <- should this be arr[6];
     //printf("Deleting 19.\n");
     print(&head);
-    //np_free(&node_pool, nodes); // <-- this causes a seg fault
+    np_free(&node_pool, nodes); // <-- the addition of this causes a seg fault
     printf("Deleting 19.\n");
     deletion(&head, 19); //<-adds nodes
     print(&head);
