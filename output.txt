@@ -1,0 +1,77 @@
+This shows the array of nodes and what they store. It does not show the storage
+address.
+
+This is at the outset.
+    {data = 0x804b040 <arr>, right = 0x804b0d0 <nodes+48>, left = 0x804b0ac <nodes+12>},
+
+    {data = 0x804b044 <arr+4>, right = 0x0, left = 0x804b0b8 <nodes+24>},
+
+    {data = 0x804b048 <arr+8>, right = 0x0, left = 0x804b0c4 <nodes+36>},
+
+    {data = 0x804b04c <arr+12>,  right = 0x804b0dc <nodes+60>, left = 0x0},
+
+    {data = 0x804b050 <arr+16>,  right = 0x804b0e8 <nodes+72>, left = 0x0},
+
+    {data = 0x804b054 <arr+20>, right = 0x0, left = 0x804b0f4 <nodes+84>},
+
+    {data = 0x804b058 <arr+24>, right = 0x804b10c <nodes+108>, left = 0x804b100 <nodes+96>},
+
+    {data = 0x804b05c <arr+28>, right = 0x0, left = 0x0},
+
+    {data = 0x804b060 <arr+32>, right = 0x0, left = 0x0},
+
+    {data = 0x804b064 <arr+36>, right = 0x804b13c <nodes+156>, left = 0x804b118 <nodes+120>},
+
+    {data = 0x804b068 <arr+40>, right = 0x804b124 <nodes+132>, left = 0x804b130 <nodes+144>},
+
+    {data = 0x804b06c <arr+44>, right = 0x0, left = 0x0},
+
+    {data = 0x804b070 <arr+48>, right = 0x0, left = 0x804b148 <nodes+168>},
+
+    {data = 0x804b074 <arr+52>, right = 0x0, left = 0x0},
+
+    {data = 0x804b078 <arr+56>, right = 0x0, left = 0x0},
+
+    {data = 0x0, right = 0x0, left = 0x0}
+
+
+This is the location of the memory that points to the data. It is also the
+beginning of each struct and therefore the address of each struct.
+4 plus the address is the beginning of the right pointer 8 plus the left pointer
+
+&nodes[0]->data = (int **) 0x804b0a0 <nodes>    p nodes[0]->data = (int *) 0x804b040 <arr>
+&nodes[1]->data = (int **) 0x804b0ac <nodes+12> p nodes[1]->data = (int *) 0x804b044 <arr+4>
+&nodes[2]->data = (int **) 0x804b0b8 <nodes+24> p nodes[2]->data = (int *)0x804b048 <arr+8>
+&nodes[3]->data = (int **) 0x804b0c4 <nodes+36> p nodes[3]->data = (int *)0x804b04c <arr+12>
+&nodes[4]->data = (int **) 0x804b0d0 <nodes+48>  p nodes[4]->data = (int *)0x804b050 <arr+16>
+&nodes[5]->data = (int **) 0x804b0dc <nodes+60>  p nodes[5]->data =(int *)0x804b054 <arr+20>
+&nodes[6]->data = (int **) 0x804b0e8 <nodes+72>  p nodes[6]->data = (int *)0x804b058 <arr+24>
+&nodes[7]->data = (int **) 0x804b0f4 <nodes+84>  p nodes[7]->data = (int *)0x804b05c <arr+28>
+&nodes[8]->data = (int **) 0x804b100 <nodes+96>  p nodes[8]->data =(int *)0x804b060 <arr+32>
+&nodes[9]->data = (int **) 0x804b10c <nodes+108  p nodes[9]->data =(int *)0x804b064 <arr+36>
+&nodes[10]->data = (int **) 0x804b118 <nodes+120>  p nodes[10]->data =(int *)0x804b068<arr+40>
+&nodes[11]->data = (int **) 0x804b124 <nodes+132>  p nodes[11]->data = (int *)0x804b06c<arr+44>
+&nodes[12]->data = (int **) 0x804b130 <nodes+144>  p nodes[12]->data = (int *)0x804b070 <arr+48>
+&nodes[13]->data = (int **) 0x804b13c <nodes+156>  p nodes[13]->data =(int *)0x804b074 <arr+52>
+&nodes[14]->data =  (int **) 0x804b148 <nodes+168>  p nodes[14]->data =(int *) 0x804b078 <arr+56>
+&nodes[15]->data = (int **) 0x804b154 <nodes+180>  p nodes[15]->data =
+&nodes[16]->data = (int **) 0x804b160
+
+THIS IS AFTER A DELATION LOOK AT DATA
+&nodes[0]->data = (int **) 0x804b0a0 <nodes>    p nodes[0]->data = (int *) 0x804b040 <arr>
+&nodes[1]->data = (int **) 0x804b0ac <nodes+12> p nodes[1]->data = (int *) 0x804b044 <arr+4>
+&nodes[2]->data = (int **) 0x804b0b8 <nodes+24> p nodes[2]->data = (int *)0x804b048 <arr+8>
+&nodes[3]->data = (int **) 0x804b0c4 <nodes+36> p nodes[3]->data = (int *)0x804b04c <arr+12>
+&nodes[4]->data = (int **) 0x804b0d0 <nodes+48>  p nodes[4]->data = (int *)0x804b050 <arr+16>
+&nodes[5]->data = (int **) 0x804b0dc <nodes+60>  p nodes[5]->data =(int *)0x804b054 <arr+20>
+&nodes[6]->data = (int **) 0x804b0e8 <nodes+72>  p nodes[6]->data = (int *)0x804b058 <arr+24>
+&nodes[7]->data = (int **) 0x804b0f4 <nodes+84>  p nodes[7]->data = (int *)0x804b05c <arr+28>
+&nodes[8]->data = (int **) 0x804b100 <nodes+96>  p nodes[8]->data =(int *)0x804b060 <arr+32>
+&nodes[9]->data = (int **) 0x804b10c <nodes+108  p nodes[9]->data =(int *)0x804b064 <arr+36>
+&nodes[10]->data = (int **) 0x804b118 <nodes+120>  p nodes[10]->data = NOTHING
+&nodes[11]->data = (int **) 0x804b124 <nodes+132>  p nodes[11]->data = 0x804b06c<arr+44>
+&nodes[12]->data = (int **) 0x804b130 <nodes+144>  p nodes[12]->data = (int *)0x804b070 <arr+48>
+&nodes[13]->data = (int **) 0x804b13c <nodes+156>  p nodes[13]->data =(int *)0x804b074 <arr+52>
+&nodes[14]->data =  (int **) 0x804b148 <nodes+168>  p nodes[14]->data =(int *) 0x804b078 <arr+56>
+&nodes[15]->data = (int **) 0x804b154 <nodes+180>  p nodes[15]->data =
+&nodes[16]->data = (int **) 0x804b160

@@ -1,6 +1,7 @@
 typedef struct bst_node_s node_t;
 typedef struct bst_head_s head_t;
 
+// vvv this is 12 bits
 struct bst_node_s {
     int *data;
     struct bst_node_s *right, *left;
