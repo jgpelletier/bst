@@ -104,7 +104,6 @@ void find(node_t *node, int num)
 
 node_t *transplant(node_t *head, node_t *prev, node_t *node, node_t *next_node)
 {
-
     if (prev == NULL) {
         head = next_node;
     }
@@ -159,8 +158,8 @@ void delete_node(node_t *node, int num)
     }
     else if (node->right == NULL) {
         transplant (head, prev, node, node->left);
-    } else {
-        min = min_f(node);
+     } else {
+       min = min_f(node);
 
         if (node->right->data != min->data ) {
             transplant (head, prev, node, min);
