@@ -70,13 +70,7 @@ int main ()
     print(&head);
 
     /*working here*/
-    // there is no garbage collection.
-
-    // I have tried dereferencing a pointer and giving the address. Both fail.
-    np_free(&node_pool, &nodes[10]); // <-- the addition of this causes a seg fault
-                    //  *nodes[10] <- invalid type argument of unary ‘*’
-                    //  nodes[10] <- incompatible type for argument 2
-                    //  &nodes[10] <- 25629 segmentation fault  ./bst
+    np_free(&node_pool, &nodes[6]);
 
     printf("Deleting 19.\n");
     deletion(&head, 19); //<-adds nodes
