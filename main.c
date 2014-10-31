@@ -70,12 +70,12 @@ int main ()
     print(&head);
 
     /*working here*/
-    np_free(&node_pool, &nodes[6]);
+    np_free(&node_pool, &nodes[6]); //<- the memory from the second arg is the free node.
 
     printf("Deleting 19.\n");
-    deletion(&head, 19); //<-adds nodes
+    deletion(&head, 19); //<-adds odes
     print(&head);
-    //np_free(&node_pool, nodes);
+    np_free(&node_pool, &nodes[10]); // <- this address replace the address from above.
 
     //insert(&head, &arr[7], np_allocate(&node_pool));
     //printf("Inserting 14.\n");
